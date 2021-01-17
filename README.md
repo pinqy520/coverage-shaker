@@ -1,5 +1,7 @@
 # Coverage Shaker
 
+[![npm version](https://badge.fury.io/js/coverage-shaker.svg)](https://badge.fury.io/js/coverage-shaker)
+
 ```
 $ npm install coverage-shaker -g
 $ coverage-shaker
