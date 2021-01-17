@@ -47,12 +47,21 @@ export function shake(coverage: CoverageEntry) {
   return ''
 }
 
-export default function parse(coverages: CoverageEntry[], files: string[]) {
-  let shaked_code: string[] = [];
+export interface ShakeResult {
+  code: string,
+  url: string,
+}
+
+export default function parse(coverages: CoverageEntry[], files: string[] = []) {
+  const shaked_code: ShakeResult[] = [];
+  const sources = files.length > 0 ? files : coverages.map(c => c.url)
   for (let coverage of coverages) {
-    for (let file of files) {
+    for (let file of sources) {
       if (coverage.url.endsWith(file)) {
-        shaked_code.push(shake(coverage));
+        shaked_code.push({
+          url: coverage.url,
+          code: shake(coverage)
+        });
       }
     }
   }

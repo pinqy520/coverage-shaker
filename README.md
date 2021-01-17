@@ -2,7 +2,11 @@
 
 ```
 $ npm install coverage-shaker -g
-$ coverage-shaker coverage-report.json --filter=lottie_canvas.js
+```
+
+
+```
+$ coverage-shaker coverage-report.json --filter=lottie_canvas.js --out=output
 ```
 
 
@@ -10,7 +14,7 @@ $ coverage-shaker coverage-report.json --filter=lottie_canvas.js
 import minify from 'coverage-shaker'
 import report from './report.json'
 
-const code = minify(report, ['lottie_canvas,js'])
+const code = minify(report, ['lottie_canvas.js'])
 
 // Write code to a javascript file
 ```
