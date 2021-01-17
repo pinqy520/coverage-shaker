@@ -2,19 +2,30 @@
 
 ```
 $ npm install coverage-shaker -g
+$ coverage-shaker
+Usage: coverage-shaker [file]
+
+选项：
+      --version  显示版本号
+  -f, --file     files you want to minify, sg: lottie_canvas.js
+  -o, --output   output dir, eg: ./output
+      --help     显示帮助信息        
 ```
 
+## Command line
 
 ```
-$ coverage-shaker coverage-report.json --filter=lottie_canvas.js --out=output
+$ coverage-shaker example/coverage-puppeteer.json -f=lottie_canvas.js -o=example
 ```
 
+## Library
 
 ```javascript
 import minify from 'coverage-shaker'
 import report from './report.json'
 
-const code = minify(report, ['lottie_canvas.js'])
+const result = minify(report, ['lottie_canvas.js'])
 
+console.log(result[0].code)
 // Write code to a javascript file
 ```

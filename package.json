@@ -2,11 +2,15 @@
   "name": "coverage-shaker",
   "version": "0.0.1",
   "description": "Minify JavaScript code from chrome/puppeteer coverage report. tree shaking.",
-  "main": "dist/lib/index.js",
-  "module": "dist/lib/index.js",
+  "main": "dist/lib/shake.js",
+  "module": "dist/lib/shake.js",
+  "typings": "dist/types/shake.d.ts",
   "scripts": {
     "build": "tsc",
     "test:cli": "ts-node ./src/cli.ts report.json"
+  },
+  "bin": {
+    "coverage-shaker": "./dist/lib/cli.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +29,12 @@
   "bugs": {
     "url": "https://github.com/pinqy520/coverage-shaker/issues"
   },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
   "homepage": "https://github.com/pinqy520/coverage-shaker#readme",
   "devDependencies": {
     "@types/babel__core": "^7.1.12",

@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+if (require.main !== module) {
+  throw new Error('Executable-only module should not be required');
+}
+
 import * as yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { resolve } from 'path'
